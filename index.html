@@ -1,16 +1,133 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Какой-то вкусный тайтл</title>
-    <link rel="stylesheet" href="public/css/bundle.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="public/css/common.css">
 </head>
+
+<!-- на главной у боди нет класса, а на странице контента класс .article -->
+
 <body>
-      <div class="header"></div>
-      <div class="content"></div>
-      <div class="footer"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="menu-btn"><span></span></div>
+                <div class="header-left">
+                    Туризм / Еда / SPA
+                </div>
+                <div class="header-center">
+                    <a href="" class="vogue"></a>
+                    <a href="#" class="mc"></a>
+                    <a href="#" class="mb"></a>
+                </div>
+                <div class="header-right">
+                    <div class="">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://vogue.ua" title="Facebook share" class="facebook-share-btn share"></a>
+                        <a href="https://twitter.com/share?url=http://vogue.ua;text=Супер вкусный текст и ссылка на ;hashtags=vogueua" class="twitter-share-btn share"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="content">
+        <div class="container">
+
+            <div class="aside fadeInLeft">
+                <div class="back-btn">
+                    <span></span>
+                </div>
+                <div class="city main">
+                    <div class="city-name">Киев</div>
+                    <div class="city-map">
+                        <img src="public/i/kyiv.png" alt="">
+                    </div>
+                    <div class="city-links">
+                        <a href="" class="active">Туризм</a>
+                        <a href="">Еда</a>
+                        <a href="">Спа</a>
+                    </div>
+                </div>
+                <div class="city">
+                    <div class="city-name">Львов</div>
+                    <div class="city-map">
+                        <img src="public/i/lviv.png" alt="">
+                    </div>
+                    <div class="city-links">
+                        <a href="" class="active">Туризм</a>
+                        <a href="">Еда</a>
+                        <a href="">Спа</a>
+                    </div>
+                </div>
+                <div class="city">
+                    <div class="city-name">Одесса</div>
+                    <div class="city-map">
+                        <img src="public/i/odessa.png" alt="">
+                    </div>
+                    <div class="city-links">
+                        <a href="" class="active">Туризм</a>
+                        <a href="">Еда</a>
+                        <a href="">Спа</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="content-top">
+                    <h1>Модные маршруты редакции</h1>
+                    <p class="text-center">
+                      Вместе с Mercedes и MasterCard главный редактор Vogue UA Ольга Сушко, бьюти-редактор Алена Пономаренко и digital-редактор Алиса Илиева объехали самые интересные и красивые места Киева, Одессы и Львова. В свои заметках они расскажут о новых барах и ресторанах, необычных прогулочных маршрутах, покажут лучшие SPA-центры Украины и откроют секреты модных путешествий. Каждую неделю – новое видео #DiscoveredByVogue
+                  </p>
+                </div>
+                <div class="content-bottom">
+                    <div class="valign-wrapper">
+                        <div class="city city-kyiv">
+                            <a href="content-page.html">
+                                <div class="fadeInLeft">
+                                    <span>Киев</span>
+                                    <img src="public/i/kyiv.png" class="" alt="">
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="city city-lviv">
+                            <a href="#">
+                                <div class="fadeInUp">
+                                    <span>Львов</span>
+                                    <img src="public/i/lviv.png" class="" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="city city-odessa">
+                            <a href="/odessa.html">
+                                <div class="fadeInRight">
+                                    <span>Одесса</span>
+                                    <img src="public/i/odessa.png" class="" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="socials">
+        <span>Поделиться</span>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://vogue.ua" title="Facebook share" class="facebook-share-btn share"></a>
+        <a href="https://twitter.com/share?url=http://vogue.ua;text=Супер вкусный текст и ссылка на ;hashtags=vogueua" class="twitter-share-btn share"></a>
+    </div>
+
+    <div class="car-wrapper"><span></span></div>
+
+
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/jquery.plate.js" charset="utf-8"></script>
+    <script src="public/js/common.js" charset="utf-8"></script>
 </body>
+
 </html>
