@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+
+@font-face {font-family: 'BaskervilleDisplayPT-Regular';
+    src: url('../fonts/331000_0_0.eot');
+    src: url('../fonts/331000_0_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/331000_0_0.woff2') format('woff2'),
+    url('../fonts/331000_0_0.woff') format('woff'),
+    url('../fonts/331000_0_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {font-family: 'BaskervilleDisplayPT-Bold';
+    src: url('../fonts/331000_1_0.eot');
+    src: url('../fonts/331000_1_0.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/331000_1_0.woff2') format('woff2'),
+    url('../fonts/331000_1_0.woff') format('woff'),
+    url('../fonts/331000_1_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+html {
+    height: 100%;
+    overflow-x: hidden;
+
+    &.ovh {
+        overflow: hidden !important;
+        //position: fixed;
+    }
+}
+
+a {
+    cursor: inherit;
+}
+
+body {
+    display: table;
+    width: 100%;
+    font-family: 'PT Serif', serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    will-change: opacity;
+    animation-name: bounce;
+    animation-duration: 1000ms;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: 200ms;
+    @media screen and (max-width: $screen-middle) {
+        padding-top: 70px;
+    }
+
+}
+
+.container {
+    @include center-block();
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    height: 100%;
+}
+
+.content {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    @media screen and (max-width: $screen-middle) {
+        overflow: visible;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+        padding-top: 20px;
+    }
+
+    &-wrapper {
+        height: 100%;
+        display: table;
+        width: 100%;
+        overflow-y: hidden;
+
+        > div {
+            display: table-row;
+            @media screen and (max-width: $screen-middle) and (orientation: portrait) {
+                display: block;
+            }
+        }
+    }
+
+    &-bottom {
+        height: 100%;
+        width: 100%;
+        font-size: 0;
+        text-align: center;
+
+        .valign-wrapper {
+            display: block;
+            max-height: 600px;
+            @media screen and (max-width: $screen-middle) {
+                max-height: inherit;
+            }
+            height: 100%;
+
+            &:before {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                width: 0;
+                height: 100%;
+            }
+            @media screen and (max-width: $screen-middle) and (orientation: portrait) {
+                display: block !important;
+
+                > .city {
+                    width: 100%;
+                    margin: 0;
+                    padding: 40px !important;
+                    text-align: center !important;
+
+                    &.city-odessa {
+                        padding: 40px 60px !important;
+                    }
+
+                    a {
+                        width: auto;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+        .city {
+            display: inline-block;
+            height: 100%;
+
+            &:before {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                width: 0;
+                vertical-align: middle;
+            }
+
+            a {
+                display: inline-block;
+                vertical-align: middle;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                position: relative;
+                background: none !important;
+
+                &:after {
+                    animation-name: bounce;
+                    animation-duration: 1000ms;
+                    animation-direction: normal;
+                    animation-timing-function: ease-in-out;
+                    animation-fill-mode: both;
+                    animation-delay: 1100ms;
+                    @media screen and (max-width: $screen-middle) and (orientation: portrait) {
+                        content: none !important;
+                    }
+                }
+
+                > div {
+                    animation-duration: 1s;
+                    animation-fill-mode: both;
+                    animation-delay: 500ms;
+                }
+
+                span {
+                    font-size: 15px;
+                    color: #000;
+                    text-transform: uppercase;
+                    position: absolute;
+                    bottom: 20px;
+                    left: 60px;
+                    @media screen and (max-width: $screen-middle) and (orientation: portrait) {
+                        position: static;
+                        font-size: 16px;
+                        margin: 10px;
+                        display: block;
+                        text-transform: uppercase;
+                    }
+                    @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                        display: none;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    display: block;
+                    position: relative;
+                    max-width: 100%;
+                }
+            }
+
+            &-kyiv {
+                text-align: left;
+                margin-right: 125px;
+                @media screen and (max-width: $screen-large) {
+                    margin-right: 83px;
+                }
+                @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                    margin-right: 55px;
+                }
+
+                a {
+                    background-image: url("../i/kyiv.png");
+                    max-width: 337px;
+                    @media screen and (max-width: $screen-large) {
+                        max-width: 225px;
+                    }
+                    @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                        max-width: 150px;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: -10%;
+                        right: 100%;
+                        z-index: -1;
+                        width: 627px* $ratio;
+                        height: 615px* $ratio;
+                        margin-right: -130px* $ratio;
+                        display: inline-block;
+                        background-image: url("../i/line-bottom-left.svg");
+                        background-repeat: no-repeat;
+                        background-size: 100%;
+                        @media screen and (max-width: $screen-large) {
+                            width: 627px;
+                            height: 615px;
+                            margin-right: -130px;
+                        }
+                        @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                            margin-right: -130px / $ratio_l;
+                            width: 627px / $ratio_l;
+                            height: 615px / $ratio_l;
+                        }
+                        @media screen and (max-width: $screen-middle) and (orientation: portrait) {
+                            margin-right: -190px;
+                        }
+                    }
+                }
+            }
+
+            &-lviv {
+                text-align: center;
+                margin-right: 165px;
+                @media screen and (max-width: $screen-large) {
+                    margin-right: 110px;
+                }
+                @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                    margin-right: 73px;
+                }
+
+                a {
+                    background-image: url("../i/lviv.png");
+                    max-width: 312px;
+                    @media screen and (max-width: $screen-large) {
+                        max-width: 210px;
+                    }
+                    @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                        max-width: 138px;
+                    }
+
+                    span {
+                        bottom: 6px;
+                        left: 30px;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: 50px;
+                        right: 50%;
+                        margin-right: -299px * $ratio;
+                        width: 598px * $ratio;
+                        height: 143px * $ratio;
+                        z-index: -1;
+                        display: inline-block;
+                        background-image: url("../i/line-bottom-center.svg");
+                        background-repeat: no-repeat;
+                        background-size: 100%;
+                        @media screen and (max-width: $screen-large) {
+                            margin-right: -299px;
+                            width: 598px;
+                            height: 143px;
+                        }
+                        @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                            margin-right: -299px / $ratio_l;
+                            width: 598px / $ratio_l;
+                            height: 143px / $ratio_l;
+                        }
+                    }
+                    @media screen and (max-width: $screen-large) {
+                        width: 416px / $ratio_l;
+                        height: 392px / $ratio_l;
+                    }
+                    @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                        width: 416px / $ratio_m;
+                        height: 392px / $ratio_m;
+                    }
+                }
+            }
+
+            &-odessa {
+                text-align: right;
+
+                a {
+                    background-image: url("../i/odessa.png");
+                    max-width: 207px;
+                    @media screen and (max-width: $screen-large) {
+                        max-width: 140px;
+                    }
+                    @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                        max-width: 93px;
+                    }
+
+                    span {
+                        bottom: 28px;
+                        right: 0;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: -60px;
+                        right: 0;
+                        margin-right: -380px* $ratio;
+                        width: 835px * $ratio;
+                        height: 577px* $ratio;
+                        z-index: -1;
+                        display: inline-block;
+                        background-image: url("../i/line-bottom-right.svg");
+                        background-repeat: no-repeat;
+                        background-size: 100%;
+                        @media screen and (max-width: $screen-large) {
+                            margin-right: -380px;
+                            width: 835px;
+                            height: 577px;
+                        }
+                        @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                            margin-right: -380px / $ratio_l;
+                            width: 835px / $ratio_l;
+                            height: 577px / $ratio_l;
+                        }
+                    }
+                    @media screen and (max-width: $screen-large) {
+                        width: 277px / $ratio_l;
+                        height: 472px / $ratio_l;
+                    }
+                    @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                        width: 277px / $ratio_m;
+                        height: 472px / $ratio_m;
+                    }
+                }
+            }
+        }
+    }
+}
+
+h1 {
+    font-size: 50px;
+    font-family:'BaskervilleDisplayPT-Bold';
+    text-align: center;
+    line-height: 1.2;
+    padding: 60px 0 10px;
+    //letter-spacing: 2px;
+    //text-transform: uppercase;
+    @media screen and (max-width: $screen-large) {
+        font-size: 35px;
+        padding: 40px 0 10px;
+        //letter-spacing: 0.8px;
+    }
+    @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+        font-size: 25px;
+        padding: 15px 0;
+        //letter-spacing: 1.8px / $ratio_m;
+    }
+    @media screen and (max-width: $screen-middle) and (orientation: portrait) {
+        font-size: 25px;
+        text-transform: none;
+        line-height: 25px;
+        padding: 20px 0 15px;
+        letter-spacing: 0;
+    }
+}
+p{
+    font-size: 17px;
+    line-height: 29px;
+}
+
+.text-center{
+    text-align: center;
+}
+h2,
+h3 {
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    @media screen and (max-width: $screen-large) {
+        font-size: 16px;
+        margin-bottom: 5px;
+        letter-spacing: 0.3px;
+    }
+    @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+        font-size: 14px;
+        margin: 0 0 5px;
+        letter-spacing: 0;
+    }
+    @media screen and (max-width: $screen-middle) and (orientation: portrait) {
+        font-size: 16px;
+        margin: 0 0 10px;
+        letter-spacing: 0;
+    }
+}
+
+* {
+    @media screen and (max-width: $screen-middle) {
+        &:not(.car-wrapper > span) {
+            animation: none !important;
+            transform: none !important;
+        }
+    }
+}
+
+.car-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    z-index: 99;
+
+    span {
+        display: inline-block;
+        width: 70px;
+        height: 50px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: translateZ(0);
+        will-change: left;
+        @include transition(left .3s);
+        background-image: url('../i/car1.png');
+        background-size: 50px;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        animation-name: moveFromLeftToRight;
+        animation-duration: 10000ms;
+        animation-direction: normal;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-delay: 2500ms;
+    }
+}

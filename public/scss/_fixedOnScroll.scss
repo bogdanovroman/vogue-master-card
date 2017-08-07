@@ -1,0 +1,56 @@
+.fixed-on-scroll {
+    > iframe {
+
+        animation-duration: .5s;
+        -webkit-animation-duration: .5s;
+
+        animation-timing-function: ease;
+        -webkit-animation-timing-function: ease;
+    }
+
+    &.fixed-active {
+        > iframe {
+            width: 320px !important;
+            height: 180px !important;
+            position: fixed !important;
+            right: 15px!important;
+            left: inherit !important;
+            top: 15px!important;
+            z-index: 99;
+            animation-name: slideDown;
+            -webkit-animation-name: slideDown;
+        	visibility: visible !important;
+            @media screen and (max-width: $screen-middle) {
+                top: inherit !important;
+                bottom: 15px !important;
+                width: 240px !important;
+                height: 135px !important;
+            }
+        }
+    }
+}
+
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-100%);
+	}
+	50%{
+		transform: translateY(3%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+@-webkit-keyframes slideDown {
+    0% {
+		transform: translateY(-100%);
+	}
+	50%{
+		transform: translateY(3%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}

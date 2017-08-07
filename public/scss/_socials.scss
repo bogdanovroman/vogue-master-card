@@ -1,0 +1,41 @@
+.socials {
+    display: none;
+    font-size: 0;
+    position: relative;
+    padding: 15px 15px 50px;
+    font-size: 0;
+    text-align: center;
+    span{
+        display: block;
+        font-size: 16px;
+        line-height: 17px;
+        vertical-align: middle;
+        text-transform: uppercase;
+        font-family:Arial;
+        color: #666;
+    }
+    a {
+        height: 40px;
+        width: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 30px;
+        opacity: 0.4;
+        vertical-align: top;
+        display: inline-block;
+        margin: 5px;
+
+        &.facebook-share-btn {
+            background-image: url("../i/logo-facebook.svg");
+        }
+
+        &.twitter-share-btn {
+            background-image: url("../i/logo-twitter.svg");
+            margin-bottom: -3px;
+        }
+    }
+
+    @media screen and (max-width: $screen-middle) and (orientation: portrait) {
+        display: block;
+    }
+}

@@ -1,0 +1,137 @@
+.aside {
+    position: fixed;
+    display: none;
+    margin-left: -180px;
+    top: 0;
+    width: 165px;
+    padding-top: 10px;
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+    animation-delay: 800ms;
+    height: 100%;
+    background: #fff;
+    z-index: 99;
+    transition: margin 0.2s;
+    will-change: margin;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+
+    &.active {
+        margin-left: -20px;
+    }
+
+    .cities {
+        @media screen and (max-width: $screen-middle) {
+            height: 100%;
+            padding-bottom: 60px;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+        }
+    }
+
+    .back-btn {
+        display: none;
+        height: 30px;
+        margin: 12px 0;
+        width: 100%;
+        text-align: center;
+        @media screen and (max-width: $screen-middle) {
+            display: block;
+        }
+
+        span {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            background: url('../i/back.svg') no-repeat center;
+        }
+    }
+
+    .city {
+        text-align: center;
+        padding: 15px;
+        display: block;
+        position: relative;
+
+        &:not(.main) {
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+            @include transition(filter .15s);
+
+            &:hover {
+                -webkit-filter: none;
+                filter: none;
+            }
+        }
+
+        &-name {
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        &-map {
+            margin-top: 5px;
+            padding: 0 30%;
+            overflow: hidden;
+            @include transition(height .2s);
+            @media screen and (max-width: $screen-middle) {
+                height: auto !important;
+            }
+
+            img {
+                width: 100%;
+                display: block;
+                min-width: 100%;
+            }
+        }
+
+        &-links {
+            display: none;
+            z-index: 99;
+            position: relative;
+
+            a {
+                font-size: 12px;
+                line-height: 16px;
+                display: block;
+                margin: 5px 0;
+                font-family: Arial;
+                color: #000;
+                text-transform: uppercase;
+
+                &:hover {
+                    color: #f79e1b;
+                }
+
+                &.active {
+                    color: #eb001b;
+                }
+            }
+        }
+
+        &-link {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        &.main {
+            .city {
+                &-name {
+                    font-size: 16px;
+                }
+
+                &-map {
+                    padding: 0 10%;
+                }
+
+                &-links {
+                    display: block;
+                }
+            }
+        }
+    }
+}

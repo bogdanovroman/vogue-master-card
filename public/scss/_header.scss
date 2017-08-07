@@ -1,0 +1,260 @@
+.header {
+    display: table-row;
+    height: 200px / $ratio;
+    position: relative;
+    @media screen and (max-width: $screen-large) {
+        height: 200px / $ratio_l;
+    }
+    @media screen and (max-width: $screen-middle) {
+        height: 67px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 9;
+        background: #fff;
+    }
+
+    &-wrapper {
+        position: relative;
+        height: 100%;
+        border-bottom: 1px solid #000;
+        padding: 35px / $ratio 0;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: 100%;
+            margin-left: -250px* $ratio;
+            width: 853px* $ratio;
+            height: 222px* $ratio;
+            display: inline-block;
+            background-image: url("../i/line-top-right.svg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            z-index: -1;
+            animation-name: bounce;
+            animation-duration: 1000ms;
+            animation-direction: normal;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: both;
+            animation-delay: 1100ms;
+            @media screen and (max-width: $screen-large) {
+                margin-left: -250px;
+                width: 853px;
+                height: 222px;
+            }
+            @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+                margin-left: -250px / $ratio_l;
+                width: 853px / $ratio_l;
+                height: 222px / $ratio_l;
+            }
+            @media screen and (max-width: 360px) {
+                content: none;
+            }
+        }
+        @media screen and (max-width: $screen-large) {
+            padding: 35px / $ratio_l 0;
+        }
+        @media screen and (max-width: $screen-middle) {
+            padding: 35px / $ratio_m 0;
+        }
+    }
+
+    .menu-btn {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 100%;
+        text-align: center;
+        font-size: 0;
+        display: none;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 0;
+            height: 100%;
+        }
+
+        span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            background: url('../i/map.svg')no-repeat center;
+            opacity: 0.5;
+        }
+    }
+
+    &-left {
+        position: absolute;
+        left: 68px / $ratio;
+        bottom: 26px / $ratio;
+        @media screen and (max-width: $screen-large) {
+            left: 68px / $ratio_l;
+            bottom: 26px / $ratio_l;
+        }
+        @media screen and (max-width: $screen-middle) {
+            left: 0;
+            right: 0;
+            display: block;
+            text-align: center;
+            bottom: -30px;
+            display: none;
+        }
+    }
+
+    &-center {
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        font-size: 0;
+        white-space: nowrap;
+
+        > a {
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            margin: 0 40px / $ratio;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+            position: relative;
+            @media screen and (max-width: $screen-large) {
+                margin: 0 40px / $ratio_l;
+            }
+            @media screen and (max-width: $screen-middle) {
+                margin: 0 40px / $ratio_m;
+            }
+            @media screen and (max-width: $screen-middle) and (orientation:portrait) {
+                margin: 0 7px;
+            }
+
+            &.vogue {
+                background-image: url("../i/logo-vogue.svg");
+                width: 320px / $ratio;
+                @media screen and (max-width: $screen-large) {
+                    width: 320px / $ratio_l;
+                }
+                @media screen and (max-width: $screen-middle) {
+                    width: 320px / $ratio_m;
+                }
+                @media screen and (max-width: 360px) {
+                    width: 80px;
+                }
+            }
+
+            &.mc {
+                width: 148px / $ratio;
+                background-image: url("../i/logo-mc.svg");
+                @media screen and (max-width: $screen-large) {
+                    width: 148px / $ratio_l;
+                }
+                @media screen and (max-width: $screen-middle) {
+                    width: 148px / $ratio_m;
+                }
+                @media screen and (max-width: 360px) {
+                    width: 40px;
+                }
+            }
+
+            &.mb {
+                background-image: url("../i/mercedes.svg");
+                width: 112px / $ratio;
+                @media screen and (max-width: $screen-large) {
+                    width: 112px / $ratio_l;
+                }
+                @media screen and (max-width: $screen-middle) {
+                    width: 112px / $ratio_m;
+                }
+                @media screen and (max-width: 360px) {
+                    width: 30px;
+                }
+            }
+
+            &.mc,
+            &.vogue {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 1px;
+                    right: -40px / $ratio;
+                    top: 0;
+                    height: 100%;
+                    background: #000;
+                    @media screen and (max-width: $screen-large) {
+                        right: -40px / $ratio_l;
+                    }
+                    @media screen and (max-width: $screen-middle) {
+                        right: -40px / $ratio_m;
+                    }
+                    @media screen and (max-width: $screen-middle) and (orientation:portrait) {
+                        right: -7px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-right {
+        position: absolute;
+        right: 68px / $ratio;
+        bottom: 26px / $ratio;
+        font-size: 0;
+
+        .socials {
+            display: block;
+        }
+        @media screen and (max-width: $screen-large) {
+            right: 68px / $ratio_l;
+            bottom: 26px / $ratio_l;
+        }
+        @media screen and (max-width: $screen-middle) and (orientation: landscape) {
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            font-size: 0;
+
+            &:before {
+                content: "";
+                vertical-align: middle;
+                display: inline-block;
+                height: 100%;
+                width: 0;
+            }
+
+            > div {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        @media screen and (max-width: $screen-middle) and (orientation: portrait) {
+            display: none;
+        }
+
+        a {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: bottom;
+            opacity: 0.4;
+            vertical-align: bottom;
+
+            &.facebook-share-btn {
+                background-image: url("../i/logo-facebook.svg");
+                margin-right: 20px;
+            }
+
+            &.twitter-share-btn {
+                background-image: url("../i/logo-twitter.svg");
+                margin-bottom: -3px;
+            }
+        }
+    }
+}
