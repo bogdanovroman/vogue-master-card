@@ -13,6 +13,7 @@
 .fadeInLeft {
     animation-name: fadeInLeft;
 }
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -28,6 +29,7 @@
 .fadeInUp {
     animation-name: fadeInUp;
 }
+
 @keyframes fadeInRight {
     from {
         opacity: 0;
@@ -43,6 +45,7 @@
 .fadeInRight {
     animation-name: fadeInRight;
 }
+
 @-webkit-keyframes bounce {
     0% {
         opacity: 0;
@@ -52,6 +55,7 @@
         opacity: 1;
     }
 }
+
 @keyframes bounce {
     0% {
         opacity: 0;
@@ -61,21 +65,23 @@
         opacity: 1;
     }
 }
+
 @keyframes moveFromLeftToRight {
     from {
-        left: -5%;
+        left: -10%;
     }
 
     to {
-        left: 105%;
+        left: 110%;
     }
 }
+
 @-webkit-keyframes moveFromLeftToRight {
     from {
-        left: -5%;
+        left: -10%;
     }
 
     to {
-        left: 105%;
+        left: 110%;
     }
 }

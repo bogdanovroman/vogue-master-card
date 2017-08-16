@@ -153,8 +153,13 @@ body {
                 text-transform: none;
                 font-style: normal;
                 font-family: inherit;
-                font-size: initial !important;
-                line-height: initial !important;
+                position: static!important;
+                font-size: 17px !important;
+                line-height: 29px !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                text-align: left !important;
             }
         }
 
@@ -262,7 +267,7 @@ body {
                 }
                 @media screen and (max-width: $screen-middle) {
                     display: block;
-                    width: 100%;
+                    width: 100% !important;
                     position: static;
                     text-align: left !important;
                 }
@@ -504,6 +509,54 @@ body {
 
                 .middle-default {
                     margin: 10px 0 !important;
+                }
+            }
+        }
+        .with-img-quote-and-location-bottom-left{
+            position: relative;
+            font-size: 0;
+            text-align: center;
+            > div{
+                display: inline-block;
+                width: 50%;
+                padding: 0 10px;
+                vertical-align: top;
+            }
+            .quote{
+                text-align: right;
+            }
+            img{
+                width: 325px;
+            }
+            .location{
+                left: -200px;
+            }
+            @media screen and (max-width: $screen-middle) {
+                > div{
+                    display: block;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    &.quote{
+                        text-align: left;
+                        margin-bottom: 20px;
+                    }
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .everything-full-width-screen-middle{
+            @media screen and (max-width: $screen-middle) {
+                div, img{
+                    width: 100% !important;
+                    &:not(.location){
+                        padding: 0 !important;
+                    }
+                    img{
+                        margin: 10px 0!important;
+                    }
                 }
             }
         }
